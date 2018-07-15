@@ -19,7 +19,7 @@ RUN set -ex; \
 	\
     pecl install memcached-2.2.0; \
     echo extension=memcached.so >> /usr/local/etc/php/conf.d/memcached.ini; \
-    echo apt-get remove -y build-essential libmemcached-dev libz-dev; \
+    apt-get remove -y build-essential libmemcached-dev libz-dev; \
 	docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
 	docker-php-ext-install gd mysqli opcache zip; \
 	\
